@@ -1,0 +1,154 @@
+# Test files
+.rvmrc
+.rspec
+.lt-components
+
+# OS generated files
+.DS_Store
+.rvm*
+.rbenv*
+.idea*
+.vscode*
+*.sublime-project
+*.sublime-workspace
+.sass-cache
+Thumbs.db
+ehthumbs.db
+*.DS_Store
+.docker-sync*
+*.swp
+*~
+.ignore
+
+# Ruby specifics #
+##################
+.bundle
+
+# Temporary files #
+tmp/*
+public/uploads/tmp/*
+public/order_files
+public/rooms
+*.tmp
+version.txt
+v8-compile-cache-*
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+#*.xml
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+log/*
+!log/.gitkeep
+*.log
+*.sqlite
+*.sqlite3
+private
+private/*
+.byebug_history
+
+# Caches #
+##########
+#*cache*
+.sass-cache/
+node_modules/
+publiv/source_maps/
+v8-compile-cache-*
+
+.ruby-version
+.powenv
+
+public/hotel_export/
+public/hotel_export_context/
+solr/data/
+solr/pids/
+public/hotel_export_context/hotels.csv
+app/views/tmp/*html.erb
+
+sitemap*.xml
+
+config/solr/default
+config/solr/development
+config/solr/test
+config/solr/production
+
+config/my_unicorn.rb
+.zeus.sock
+
+*.bin
+
+script/tomita/debug.html
+script/tomita/tomita-mac
+script/tomita/tomita-linux64
+
+Vagrantfile
+.vagrant*
+.pryrc
+
+public/mobile-assets/*
+public/assets/*
+!public/assets/.gitkeep
+public/assets/js-assets-development.js
+
+public/mobile-assets/manifest.json
+
+go-tour-1.14.05.lzh
+
+docker/dev-data
+docker/bundle
+
+# React on Rails
+npm-debug.log*
+node_modules
+
+# Generated js bundles
+/app/assets/webpack/*
+config/is_staging.txt
+
+/app/assets/javascripts/webpack-bundle/
+
+/app/assets/javascripts/lt/
+/app/assets/javascripts/admin/
+/app/assets/javascripts/nights_calendar.js
+/app/assets/javascripts/performance/
+/app/assets/javascripts/affiliate/
+
+# Generated css bundle
+/app/assets/stylesheets/lt-modules/
+
+/v8-compile-cache-*/
+#vscode local hostory
+.history
+.byebug_history
+
+#rubymine
+.rakeTasks
+
+ssl-cert/*level.travel.*
+.short-plugins
+
+
+lib/build/nginx/ssl/*.key
+lib/build/nginx/ssl/*.crt
+lib/build/nginx/sites-enabled/*
+!lib/build/nginx/sites-enabled/.keep
+public/admin/manager-version.txt
