@@ -14,7 +14,9 @@ WEB_COURSE_NAMES.each do |course|
     days_duration: rand(30)
   )
   
-  2.times do |count_group| 
+  2.times do |count_group|
+  next unless  WebCourse.find_by(name: "Программирование на #{course}").present?
+  
     Group.create(
       name: "Группа №#{count_group + 1} <#{course}>",
       web_course_id: WebCourse.find_by(name: "Программирование на #{course}").id, 
