@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 2020_07_27_173906) do
 
+  create_table "group_students", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.datetime "start_time"
@@ -23,11 +30,6 @@ ActiveRecord::Schema.define(version: 2020_07_27_173906) do
     t.index ["web_course_id"], name: "index_groups_on_web_course_id"
   end
 
-  create_table "groups_students", id: false, force: :cascade do |t|
-    t.integer "group_id", null: false
-    t.integer "student_id", null: false
-  end
-
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -36,9 +38,11 @@ ActiveRecord::Schema.define(version: 2020_07_27_173906) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "students_web_courses", id: false, force: :cascade do |t|
-    t.integer "web_course_id", null: false
-    t.integer "student_id", null: false
+  create_table "web_course_students", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "web_course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "web_courses", force: :cascade do |t|

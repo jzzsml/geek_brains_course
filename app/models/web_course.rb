@@ -1,6 +1,7 @@
 class WebCourse < ApplicationRecord
   has_many :groups, dependent: :destroy
-  has_and_belongs_to_many :students
+  has_many :web_course_students, dependent: :destroy
+  has_many :students, :through => :web_course_students
 
   validates :name, presence: true, uniqueness: true
   validates :days_duration, presence: true
