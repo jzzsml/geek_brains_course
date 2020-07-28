@@ -44,6 +44,7 @@
           </table>
         </td>
         <td><%= group.students.size %></td>
+        <td><%= link_to 'Записаться', "/groups/#{group.id}/enroll" %></td>
       </tr>
     <% end %>
   </table>
