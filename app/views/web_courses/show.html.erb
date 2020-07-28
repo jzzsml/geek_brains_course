@@ -1,0 +1,50 @@
+<div class="container 1">
+  <h2>Описание курса</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Продолжительность обучения</th>
+    </tr>
+    </thead>
+    <tr>
+      <td><%= @web_course.name %></td>
+      <td><%= @web_course.description %></td>
+      <td><%= @web_course.days_duration%></td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="container 2">
+  <h2>Список групп</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Группа</th>
+      <th>Начало занятий</th>
+      <th>Список студентов</th>
+      <th>Количество студентов</th>
+    </tr>
+    </thead>
+
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= group.start_time.strftime('%d-%m-%Y') %></td>
+        <td>
+          <table class="table">
+            <thead><tr><th></th></tr></thead>
+            <% group.students.each do |student| %>
+              <tr>
+                <td><%= student.name %> <%= student.surname %></td>
+              </tr>
+            <% end %>
+          </table>
+        </td>
+        <td><%= group.students.size %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

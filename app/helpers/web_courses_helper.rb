@@ -1,2 +1,2 @@
-module CoursesHelper
+module WebCoursesHelper
 end
