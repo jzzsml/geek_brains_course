@@ -16,6 +16,17 @@ ActiveAdmin.register Group do
  
       actions
     end
+
+    show do |group|
+      attributes_table do
+        row(:id)
+        row(:name)
+        row(:start_time)
+        row(:active)
+        row(:web_course) { group.web_course.name if group.web_course.present? }
+        row(:students) { group.students.pluck(:email).join(', ') if group.students.present? }
+      end
+    end
   
     form do |f|
       f.inputs do

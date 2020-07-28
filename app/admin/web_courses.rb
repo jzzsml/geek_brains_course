@@ -15,6 +15,16 @@ ActiveAdmin.register WebCourse do
  
       actions
     end
+
+    show do |web_course|
+      attributes_table do
+        row(:id)
+        row(:name)
+        row(:description)
+        row(:days_duration)
+        row(:groups) { web_course.groups.pluck(:name).join(', ') if web_course.groups.present? }
+      end
+    end
   
     form do |f|
       f.inputs do

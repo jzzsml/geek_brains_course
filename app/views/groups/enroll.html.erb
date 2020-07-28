@@ -1,7 +1,7 @@
 <h1>Запись в группу</h1>
 <%= form_tag :action => 'enroll' do %>
 
-<% if @student.errors.any? %>
+<% if @student && @student.errors.any? %>
   <h2>Ошибки:</h2>
     <% @student.errors.full_messages.each do |message| %>
     <li><%= message %></li>
