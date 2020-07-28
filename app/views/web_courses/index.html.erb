@@ -1,3 +1,5 @@
+<%= javascript_include_tag('sorter.js') %>
+
 <div class="container">
   <h2>Список курсов</h2>
   <table class="table sortable">
@@ -12,9 +14,14 @@
       <% group = web_course.groups.order(start_time: :asc).first %>
       <tr>
         <td><%= web_course.name %></td>
-        <td><%= group.start_time.strftime('%d-%m-%Y') %></td>
-        <% active_groups =  web_course.groups.select { |group| group.active } %>
-        <td><%= active_groups.sum { |group| group.students.size } %></td>
+        <% if group.present? %>
+          <td><%= group.start_time.strftime('%d-%m-%Y')%></td>
+          <% active_groups =  web_course.groups.select { |group| group.active } %>
+          <td><%= active_groups.sum { |group| group.students.size } %></td>
+        <% else %>
+          <td><%= "Отсутствует группа"%></td>
+          <td><%= "0"%></td>
+        <% end %>
         <td><%= link_to 'Show', web_course %></td>
       </tr>
     <% end %>
