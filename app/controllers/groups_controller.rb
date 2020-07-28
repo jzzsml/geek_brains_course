@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   layout false
-  
+
   def enroll
     if request.post?
       @student = Student.new(student_params)
