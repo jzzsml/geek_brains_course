@@ -15,11 +15,14 @@ WEB_COURSE_NAMES.each do |course|
   )
   
   2.times do |count_group| 
-    Group.create(name: "Группа №#{count_group + 1} #{course}", web_course_id: WebCourse.last.id, start_time: (Time.now + rand(150).days))
+    Group.create(
+      name: "Группа №#{count_group + 1} <#{course}>",
+      web_course_id: WebCourse.find_by(name: "Программирование на #{course}").id, 
+      start_time: (Time.now + rand(150).days)
+    )
     5.times do |count_student|
       student = Student.all[rand(Student.all.size)]
       Group.last.students << student
-      WebCourse.last.students << student
     end
   end
 end

@@ -13,7 +13,8 @@
       <tr>
         <td><%= web_course.name %></td>
         <td><%= group.start_time.strftime('%d-%m-%Y') %></td>
-        <td><%= web_course.groups.sum { |group| group.students.size } %></td>
+        <% active_groups =  web_course.groups.select { |group| group.active } %>
+        <td><%= active_groups.sum { |group| group.students.size } %></td>
         <td><%= link_to 'Show', web_course %></td>
       </tr>
     <% end %>

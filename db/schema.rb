@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_173906) do
+ActiveRecord::Schema.define(version: 2020_07_27_173725) do
 
   create_table "group_students", force: :cascade do |t|
     t.integer "student_id"
@@ -34,13 +34,6 @@ ActiveRecord::Schema.define(version: 2020_07_27_173906) do
     t.string "name"
     t.string "surname"
     t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "web_course_students", force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "web_course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
