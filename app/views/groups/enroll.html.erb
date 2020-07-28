@@ -1,6 +1,13 @@
 <h1>Запись в группу</h1>
 <%= form_tag :action => 'enroll' do %>
 
+<% if @student.errors.any? %>
+  <h2>Ошибки:</h2>
+    <% @student.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+
 <p><label for = "student_name">Имя</label>:  
 <%= text_field 'student', 'name' %></p>
 
