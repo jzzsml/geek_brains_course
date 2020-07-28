@@ -20,8 +20,4 @@ class GroupsController < ApplicationController
     def student_params
       params.require(:student).permit(:name, :email, :surname)
     end
-
-    def permitted_params
-        params.permit!
-    end
 end
